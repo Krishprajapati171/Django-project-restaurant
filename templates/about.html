@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #1e1e1e, #2b2b2b, #5c5c5c);
+            color: white;
+        }
+
+        .flexing-nav {
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            flex-wrap: nowrap;
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            opacity: 90%;
+            color: white;
+            word-spacing: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .flexing-nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .flexing-nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .flexing-nav a:hover {
+            color: whitesmoke;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #ffd700; /* Gold color for title */
+            margin-top: 50px;
+        }
+
+        .about-section {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .about-section h2 {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .about-highlight {
+            font-size: 1.3em;
+            color: #ffd700;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="flexing-nav">
+        <b><a href="/home">HOME</a></b>
+        <b><a href="/menu">MENU</a></b>
+        <b><a href="/service">SERVICE</a></b>
+        <b><a href="/about">ABOUT</a></b>
+        <b><a href="/contact">CONTACT</a></b>
+    </div>
+
+    <!-- About Page Content -->
+    <h1>About Us</h1>
+    <div class="about-section">
+        <img src="{% static 'restaurant-interior.jpg' %}" alt="Restaurant Interior">
+        <h2>Welcome to The Flavour Story</h2>
+        <p>
+            At <span class="about-highlight">The Flavour Story</span>, we believe that food is not just nourishment but an experience that brings people together. 
+            Our passion lies in offering a combination of exceptional dining, personalized service, and a welcoming ambiance that makes every visit special.
+        </p>
+        <p>
+            Whether you're here to enjoy a quiet meal with family, celebrate a milestone, or simply savor your favorite dishes, we promise an unforgettable experience. 
+            With a diverse menu crafted from the finest ingredients and a focus on innovation, we aim to delight your taste buds and leave you coming back for more.
+        </p>
+        <p>
+            Thank you for making us a part of your journey. We are honored to serve you and be a part of your cherished memories.
+        </p>
+    </div>
+</body>
+</html>

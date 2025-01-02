@@ -1,0 +1,576 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+
+    <style>
+
+
+body
+{
+    margin: 0;
+    font-family:'Arial',sans-serif;
+    background: linear-gradient(to bottom right, #1e1e1e, #2b2b2b, #5c5c5c);
+    color: white;
+}
+
+
+a{
+    color: white;
+    text-decoration: none;
+   
+    
+}
+
+
+
+
+.flexing-nav{
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    flex-wrap: nowrap;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    opacity: 90%;
+    color: white;
+   word-spacing: 50px;
+   transition: background-color 0.3s ease;
+   
+}
+
+.flexing-nav.scrolled {
+    background-color: rgb(0,0,0,0.95);
+}
+
+
+.flexing-nav a {
+    transition: color 0.3s ease; /* Example transition */
+}
+
+.flexing-nav a:hover { 
+    color:whitesmoke; /* Change color on hover */
+}
+
+.flexing-nav a {
+    animation: colorChange 1.5s ease-in-out; /* Example animation */
+}
+
+@keyframes colorChange {
+    0% { color:rgb(205, 181, 46); }
+    50% { color:rgb(237, 203, 12) ; }
+    100% { color:gold}
+}
+
+
+
+.example {
+            position: relative;
+        }
+
+        .example p {
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-weight: bold;
+            font-size: 5em;
+            font-family: Quicksand, sans-serif;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards; /* Add animation here */
+        }
+
+        .example img {
+            width: 100%;
+        }
+
+        /* Keyframes for the fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -60%); /* Optional effect for slight movement */
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+            margin: 40px 0;
+            
+        }
+
+        /* Individual Card */
+        .card {
+       
+            background-color: #fff;
+            width: 300px;
+            height: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transform: scale(1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover Effect on Card */
+        .card:hover {
+            transform: scale(1.05); /* Slightly increase size */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+        }
+
+        .card img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .card-content p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .image-container {
+    display: flex;
+    justify-content: space-between; /* Distributes images evenly */
+    gap: 20px; /* Equal space between images */
+    margin: 40px 0;
+    flex-wrap: wrap; /* Allow images to wrap if necessary */
+}
+
+.image-item {
+    flex: 1; /* Ensure each image item grows evenly */
+    max-width: 300px; /* Limit the maximum width */
+    min-width: 200px; /* Limit the minimum width */
+    text-align: center; /* Center-align the images inside their containers */
+}
+
+.image-item img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: for rounded corners */
+}
+/* Our Team Section */
+.our-team {
+    text-align: center;
+    margin: 60px 0;
+}
+
+.our-team h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffd700; /* Golden color for emphasis */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Team Member Container */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Individual Team Member Card */
+.team-member {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect on Team Member */
+.team-member:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Darker shadow */
+}
+
+/* Team Member Image */
+.team-member img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Team Member Name */
+.team-member h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Team Member Role */
+.team-member p {
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+
+
+         .client-reviews {
+        max-width: 100%;
+        margin: 50px auto;
+        padding: 20px;
+        background:linear-gradient(to bottom right, #1e1e1e, #2b2b2b, #5c5c5c);;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .client-reviews-title {
+        text-align: center;
+        font-size: 2.5em;
+        color: #ffd700; /* Gold color for the title */
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+    }
+
+    .review-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 20px;
+    }
+
+    .review-item {
+        background: #fff;
+        padding: 20px;
+        min-width: 300px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0; /* Prevent items from shrinking */
+        transition: transform 0.3s ease;
+    }
+
+    .review-item:hover {
+        transform: scale(1.05);
+    }
+
+    .review-item p {
+        font-style: italic;
+        color: #333;
+    }
+
+    .review-item span {
+        display: block;
+        text-align: right;
+        color: #ffd700; /* Gold color for the name */
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    /* Optional: Add some styles for the scrollbar to make it look custom */
+    .review-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .review-container::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 10px;
+    }
+
+    .review-container::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+        border-radius: 10px;
+    }
+
+
+    
+
+    /* Footer css */
+
+/* General footer styling */
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin-top: 40px;
+}
+
+/* Footer content container */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Footer section style */
+.footer-section {
+    flex: 1;
+    padding: 0 30px;
+    min-width: 250px; /* Ensure sections are at least this wide */
+}
+
+.footer-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ffd700; /* Golden color for emphasis */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 8px 0;
+}
+
+.footer-section a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background-color: #111;
+    padding: 15px 0;
+    font-size: 1em;
+    color: #ccc;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        padding: 20px 0;
+        text-align: center;
+    }
+}
+    
+    
+    </style>
+
+</head>
+<body>
+
+
+    <div class="flexing-nav">
+        <b><a href="/home">HOME</a></b>
+        <b><a href="/menu">MENU</a></b>
+        <b><a href="/service">SERVICE</a></b>
+        <b><a href="/about">ABOUT</a></b>
+        <b><a href="/contact">CONTACT</a></b>
+    </div>
+     
+    <div class="example ">
+        <img src="{% static 'img.jpg' %}" />
+        <p><i><b>The Flavour Story</b></i></p>	
+      </div>
+
+
+
+
+
+      <div class="card-container">
+        <div class="card">
+            <img src="{% static 'chef.png' %}"  />
+            <div class="card-content">
+                <h3>Master Chef</h3>
+                <p>Master Chef: A culinary virtuoso, renowned for creating exquisite dishes that blend artistry and precision.</p>
+
+
+               
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'quality.png' %}" alt="Card 2">
+            <div class="card-content">
+                <h3>Quality Food</h3>
+                <p>Quality Food: Expertly crafted dishes that elevate the dining experience through exceptional taste and premium ingredients.</p>
+
+                
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'delivery.png' %}" alt="Card 3">
+            <div class="card-content">
+                <h3>Online Order</h3>
+                <p>Online Food Order: Convenient, quick, and reliable delivery of your favorite dishes, right to your doorstep.</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <div class="image-item">
+            <img src="{% static 'first.jpg' %}" alt="Image 1">
+        </div>
+        <div class="image-item">
+            <img src="{% static 'second.jpg' %}" alt="Image 2">
+        </div>
+        <div class="image-item">
+            <img src="{% static 'third.jpg' %}" alt="Image 3">
+        </div>
+        <div class="image-item">
+            <img src="{% static 'fourth.jpg' %}" alt="Image 4">
+        </div>
+    </div>
+
+
+
+    <!-- our team  -->
+
+
+    <div class="our-team">
+        <h2>Our Master Chefs</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="{% static 'chef_1.jpeg' %}" alt="Chef 1">
+                <h3>John Doe</h3>
+                <p>Head Chef</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'chef_2.jpg' %}" alt="Chef 2">
+                <h3>Jane Smith</h3>
+                <p>Sous Chef</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'chef_3.jpg' %}" alt="Chef 3">
+                <h3>Alex Johnson</h3>
+                <p>Pastry Chef</p>
+            </div>
+        </div>
+    </div>
+
+
+ <!-- client reviews:: -->
+
+    <section class="client-reviews">
+        <h2 class="client-reviews-title">Our Client Says</h2>
+        <div class="review-container">
+            <div class="review-item">
+                <p>"The food here is exceptional, and the service is even better. Highly recommend!"</p>
+                <span>- James Williams</span>
+            </div>
+            <div class="review-item">
+                <p>"A delightful experience, great ambiance, and amazing dishes. Will definitely return!"</p>
+                <span>- Michael Thompson</span>
+            </div>
+            <div class="review-item">
+                <p>"Best restaurant in town, the flavors are unmatched. A must-try for food lovers!"</p>
+                <span>- David Clark</span>
+            </div>
+            <div class="review-item">
+                <p>"I am a regular here, and I can't get enough of the food. Always a great experience!"</p>
+                <span>- Mia Davis</span>
+            </div>
+            <div class="review-item">
+                <p>"From the moment you step in, you know you're in for an incredible meal. Totally worth it!"</p>
+                <span>- Noah Moore</span>
+            </div>
+            <div class="review-item">
+                <p>"An amazing place for dinner dates. The food and atmosphere are top-notch."</p>
+                <span>- Lily Anderson</span>
+            </div>
+            <div class="review-item">
+                <p>"The menu offers a great variety, and everything we've tried has been fantastic!"</p>
+                <span>- David Clark</span>
+            </div>
+            <div class="review-item">
+                <p>"Exceptional service paired with extraordinary food. It's always a pleasure visiting!"</p>
+                <span>- Ava White</span>
+            </div>
+            <div class="review-item">
+                <p>"The best dining experience I've had. The flavors are exquisite and the staff is wonderful."</p>
+                <span>- Daniel Harris</span>
+            </div>
+            <div class="review-item">
+                <p>"The ambiance is perfect for a night out, and the food never disappoints!"</p>
+                <span>- Mia Taylor</span>
+            </div>
+        </div>
+    </section>
+ 
+
+
+
+ <!-- footer -->
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>We are a premium dining destination, offering exquisite culinary experiences that blend artistry and precision. Join us for an unforgettable meal.</p>
+            </div>
+    
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><strong>Address:</strong> The Flavour Story
+                    456 Gourmet Boulevard, Suite 300
+                    Las Vegas, NV 89109, USA</p>
+                <p><strong>Email:</strong> <a href="mailto:info@theflavourstory.com">info@theflavourstory.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+11234567890">(123) 456-7890</a></p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 The Flavour Story. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Add a 'scrolled' class to the navbar when scrolling
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".flexing-nav");
+            if (window.scrollY > 50) { // If scrolled more than 50px
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+    
+</body>
+</html>

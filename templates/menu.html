@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #1e1e1e, #2b2b2b, #5c5c5c);
+            color: white;
+        }
+
+        .flexing-nav {
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            flex-wrap: nowrap;
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            opacity: 90%;
+            color: white;
+            word-spacing: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .flexing-nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .flexing-nav a:hover {
+            color: lightyellow;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #ffd700;
+        }
+
+        .menu-category {
+            margin-top: 40px;
+        }
+
+        .menu-category h2 {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+            border-bottom: 2px solid white;
+            display: inline-block;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .menu-item h3 {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin: 15px 0 10px;
+        }
+
+        .menu-item p {
+            color: #ccc;
+        }
+
+        .menu-item .price {
+            font-size: 1.2em;
+            color: #ffd700;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="flexing-nav">
+        <b><a href="/home">HOME</a></b>
+        <b><a href="/menu">MENU</a></b>
+        <b><a href="/service">SERVICE</a></b>
+        <b><a href="/about">ABOUT</a></b>
+        <b><a href="/contact">CONTACT</a></b>
+    </div>
+
+    <!-- Menu Page Content -->
+    <div class="menu-container">
+    <h1><b>Exquisite Vegetarian Delights</b></h1>
+
+        <!-- Starters Section -->
+        <div class="menu-category">
+            <h2>Starters</h2>
+            <div class="menu-items">
+                <div class="menu-item"><h3>Spring Rolls</h3><p>Crispy veggie rolls</p><p class="price">$5.99</p></div>
+                <div class="menu-item"><h3>Veg Manchurian</h3><p>Spicy Indo-Chinese dish</p><p class="price">$7.49</p></div>
+                <div class="menu-item"><h3>Paneer Tikka</h3><p>Grilled spiced paneer</p><p class="price">$8.99</p></div>
+                <div class="menu-item"><h3>Aloo Tikki</h3><p>Crispy potato patties</p><p class="price">$4.99</p></div>
+                <div class="menu-item"><h3>Veg Seekh Kebab</h3><p>Minced veggie kebabs</p><p class="price">$6.99</p></div>
+                <div class="menu-item"><h3>Hara Bhara Kebab</h3><p>Spinach and peas patties</p><p class="price">$6.49</p></div>
+                <div class="menu-item"><h3>Stuffed Mushrooms</h3><p>Cheese-filled mushrooms</p><p class="price">$7.99</p></div>
+                <div class="menu-item"><h3>Veg Samosa</h3><p>Classic Indian snack</p><p class="price">$4.49</p></div>
+                <div class="menu-item"><h3>Cheese Balls</h3><p>Crispy cheese bites</p><p class="price">$6.99</p></div>
+                <div class="menu-item"><h3>Veg Crispy</h3><p>Crunchy fried vegetables</p><p class="price">$7.49</p></div>
+            </div>
+        </div>
+
+        <!-- Main Course Section -->
+        <div class="menu-category">
+            <h2>Main Course</h2>
+            <div class="menu-items">
+                <div class="menu-item"><h3>Paneer Butter Masala</h3><p>Rich creamy curry</p><p class="price">$9.99</p></div>
+                <div class="menu-item"><h3>Vegetable Biryani</h3><p>Fragrant rice with spices</p><p class="price">$8.99</p></div>
+                <div class="menu-item"><h3>Palak Paneer</h3><p>Spinach curry with paneer</p><p class="price">$10.49</p></div>
+                <div class="menu-item"><h3>Chana Masala</h3><p>Spiced chickpea curry</p><p class="price">$7.99</p></div>
+                <div class="menu-item"><h3>Baingan Bharta</h3><p>Smoked eggplant curry</p><p class="price">$8.49</p></div>
+                <div class="menu-item"><h3>Dal Makhani</h3><p>Rich lentil stew</p><p class="price">$9.49</p></div>
+                <div class="menu-item"><h3>Aloo Gobi</h3><p>Potatoes and cauliflower</p><p class="price">$7.49</p></div>
+                <div class="menu-item"><h3>Shahi Paneer</h3><p>Royal paneer curry</p><p class="price">$10.49</p></div>
+                <div class="menu-item"><h3>Vegetable Pulao</h3><p>Mixed vegetable rice</p><p class="price">$7.99</p></div>
+                <div class="menu-item"><h3>Malai Kofta</h3><p>Veg dumplings in curry</p><p class="price">$11.49</p></div>
+            </div>
+        </div>
+
+        <!-- Desserts Section -->
+        <div class="menu-category">
+            <h2>Desserts</h2>
+            <div class="menu-items">
+                <div class="menu-item"><h3>Gulab Jamun</h3><p>Sweet milk dumplings</p><p class="price">$3.99</p></div>
+                <div class="menu-item"><h3>Rasgulla</h3><p>Soft cottage cheese balls</p><p class="price">$4.49</p></div>
+                <div class="menu-item"><h3>Kulfi</h3><p>Traditional Indian ice cream</p><p class="price">$5.49</p></div>
+                <div class="menu-item"><h3>Jalebi</h3><p>Sweet spiral fritters</p><p class="price">$3.99</p></div>
+                <div class="menu-item"><h3>Rabri</h3><p>Thickened sweetened milk</p><p class="price">$4.99</p></div>
+                <div class="menu-item"><h3>Carrot Halwa</h3><p>Sweet grated carrots</p><p class="price">$5.49</p></div>
+                <div class="menu-item"><h3>Malpua</h3><p>Sweet pancake</p><p class="price">$4.49</p></div>
+                <div class="menu-item"><h3>Kheer</h3><p>Rice pudding</p><p class="price">$5.49</p></div>
+                <div class="menu-item"><h3>Besan Ladoo</h3><p>Sweet gram flour balls</p><p class="price">$3.99</p></div>
+                <div class="menu-item"><h3>Moong Dal Halwa</h3><p>Sweet lentil dessert</p><p class="price">$5.99</p></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

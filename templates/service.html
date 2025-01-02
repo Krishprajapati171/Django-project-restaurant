@@ -1,0 +1,130 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #1e1e1e, #2b2b2b, #5c5c5c);
+            color: white;
+        }
+
+        .flexing-nav {
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            flex-wrap: nowrap;
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            opacity: 90%;
+            color: white;
+            word-spacing: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .flexing-nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .flexing-nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .flexing-nav a:hover {
+            color: whitesmoke;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #ffd700; /* Gold color for title */
+            margin-top: 50px;
+        }
+
+        .service-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 50px 0;
+            gap: 30px;
+        }
+
+        .service-item {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .service-item h3 {
+            font-size: 1.5em;
+            color: #ffd700; /* Gold for headings */
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1em;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="flexing-nav">
+        <b><a href="/home">HOME</a></b>
+        <b><a href="/menu">MENU</a></b>
+        <b><a href="/service">SERVICE</a></b>
+        <b><a href="/about">ABOUT</a></b>
+        <b><a href="/contact">CONTACT</a></b>
+    </div>
+
+    <!-- Service Page Content -->
+    <h1>Our Services</h1>
+    <div class="service-container">
+        <div class="service-item">
+            <img src="{% static 'catering.jpg' %}" alt="Catering Service">
+            <h3>Catering Services</h3>
+            <p>Providing exceptional catering solutions for weddings, parties, and corporate events with gourmet options.</p>
+        </div>
+        <div class="service-item">
+            <img src="{% static 'custom-dishes.jpg' %}" alt="Custom Dishes">
+            <h3>Custom Dishes</h3>
+            <p>Tailor-made dishes to match your unique preferences and dietary requirements.</p>
+        </div>
+        <div class="service-item">
+            <img src="{% static 'event-hosting.jpg' %}" alt="Event Hosting">
+            <h3>Event Hosting</h3>
+            <p>Host your private gatherings at our venue with personalized service and menus.</p>
+        </div>
+        <div class="service-item">
+            <img src="{% static 'takeaway.jpg' %}" alt="Takeaway Services">
+            <h3>Takeaway</h3>
+            <p>Quick and convenient takeaway options for your favorite meals on the go.</p>
+        </div>
+        
+    </div>
+</body>
+</html>

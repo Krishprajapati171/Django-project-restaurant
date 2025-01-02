@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #1e1e1e, #2b2b2b, #5c5c5c);
+            color: white;
+        }
+
+        .flexing-nav {
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            flex-wrap: nowrap;
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            opacity: 90%;
+            color: white;
+            word-spacing: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .flexing-nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .flexing-nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .flexing-nav a:hover {
+            color: whitesmoke;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #ffd700; /* Gold color for title */
+            margin-top: 50px;
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            font-size: 1.2em;
+            color: #ccc;
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form label {
+            font-size: 1.2em;
+            color: #ffd700;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #ffd700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #e5c100;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="flexing-nav">
+        <b><a href="/home">HOME</a></b>
+        <b><a href="/menu">MENU</a></b>
+        <b><a href="/service">SERVICE</a></b>
+        <b><a href="/about">ABOUT</a></b>
+        <b><a href="/contact">CONTACT</a></b>
+    </div>
+
+    <!-- Contact Page Content -->
+    <h1>Contact Us</h1>
+    <div class="contact-container">
+        <div class="contact-info">
+            <p><strong>Address:</strong>  The Flavour Story
+                456 Gourmet Boulevard, Suite 300
+                Las Vegas, NV 89109, USA</p>
+            <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 234 567 890</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@theflavourstory.com">info@theflavourstory.com</a></p>
+            <p>We'd love to hear from you! Feel free to reach out to us for any inquiries or feedback.</p>
+        </div>
+
+        <form class="contact-form" method="post" action="/contact/confirmation/">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+            
+            <button type="submit">submit here</button>
+        </form>
+    </div>
+</body>
+</html>
